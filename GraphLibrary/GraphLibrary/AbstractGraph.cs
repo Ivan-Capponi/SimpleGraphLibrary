@@ -6,7 +6,7 @@ namespace GraphLibrary
     public abstract class AbstractGraph <TV,TK> : IGraph<TV,TK>
     {
         protected readonly List<TV> VertexSet = new List<TV>();
-        protected readonly List<PairValue<TV>> EdgeSet = new List<PairValue<TV>>();
+        protected readonly List<IPairValue<TV>> EdgeSet = new List<IPairValue<TV>>();
         protected readonly Dictionary<IPairValue<TV>, TK> Weigths = new Dictionary<IPairValue<TV>, TK>();
         public bool AddVertex(TV vertex)
         {
@@ -52,7 +52,7 @@ namespace GraphLibrary
 
         public IEnumerable<IPairValue<TV>> GetEdgeSet()
         {
-            foreach (PairValue<TV> edge in EdgeSet)
+            foreach (IPairValue<TV> edge in EdgeSet)
                 yield return edge;
         }
 

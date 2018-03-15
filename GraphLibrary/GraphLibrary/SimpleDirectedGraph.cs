@@ -11,7 +11,7 @@ namespace GraphLibrary
                 throw new ArgumentNullException();
             if (!VertexSet.Contains(v1) || !VertexSet.Contains(v2))
                 return false;
-            PairValue<TV> pair = new PairValue<TV>(v1, v2);
+            IPairValue<TV> pair = new PairValue<TV>(v1, v2);
             if (EdgeSet.Contains(pair))
                 return false;
             EdgeSet.Add(pair);
@@ -23,7 +23,7 @@ namespace GraphLibrary
         {
             if (v1 == null || v2 == null)
                 throw new ArgumentNullException();
-            PairValue<TV> pair = new PairValue<TV>(v1, v2);
+            IPairValue<TV> pair = new PairValue<TV>(v1, v2);
             if (!Weigths.ContainsKey(pair))
                 throw new ArgumentException();
             return Weigths[pair];
@@ -33,7 +33,7 @@ namespace GraphLibrary
         {
             if (v1 == null || v2 == null)
                 throw new ArgumentNullException();
-            PairValue<TV> pair = new PairValue<TV>(v1, v2);
+            IPairValue<TV> pair = new PairValue<TV>(v1, v2);
             if (EdgeSet.Contains(pair))
             {
                 EdgeSet.Remove(pair);
@@ -89,7 +89,7 @@ namespace GraphLibrary
 
         public override IEnumerable<TV> AdjacentVertex(TV vertex)
         {
-            foreach (PairValue<TV> p in EdgeSet)
+            foreach (IPairValue<TV> p in EdgeSet)
                 if (p.GetFirst().Equals(vertex))
                     yield return p.GetSecond();
         }
