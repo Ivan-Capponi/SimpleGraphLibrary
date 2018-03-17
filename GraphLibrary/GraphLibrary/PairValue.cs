@@ -10,6 +10,8 @@ namespace GraphLibrary
         {
             if (t1 == null || t2 == null)
                 throw new ArgumentNullException();
+            if (t1.GetType() != t2.GetType())
+                throw new ArgumentException();
             _t1 = t1;
             _t2 = t2;
         }
