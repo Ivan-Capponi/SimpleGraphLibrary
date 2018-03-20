@@ -115,11 +115,4 @@ namespace GraphLibrary
         /// <returns>The edge set of the graph</returns>
         IEnumerable<IPairValue<TV>> GetEdgeSet();
     }
-
-    public interface IPairValue<T>
-    {
-        T GetFirst();
-        T GetSecond();
-        bool Contains(T value);
-    }
 }

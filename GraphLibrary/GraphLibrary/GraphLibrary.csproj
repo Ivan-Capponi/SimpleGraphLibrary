@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractGraph.cs" />
+    <Compile Include="IPairValue.cs" />
     <Compile Include="SimpleDirectedGraph.cs" />
     <Compile Include="IGraph.cs" />
     <Compile Include="PairValue.cs" />
