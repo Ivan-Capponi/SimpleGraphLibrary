@@ -49,6 +49,7 @@
     <Compile Include="AbstractGraphTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleDirectedGraphTests.cs" />
+    <Compile Include="SimpleUndirectedGraphTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
